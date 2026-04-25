@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsift - Privacy Policy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #1D1D1F;
+            background: #fff;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        h2 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+        p, li { font-size: 15px; color: #333; margin-bottom: 12px; }
+        ul { padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 6px; }
+        .effective-date { font-size: 14px; color: #6E6E73; margin-bottom: 32px; }
+        .contact { background: #F5F5F7; padding: 20px; border-radius: 12px; margin-top: 32px; }
+        .contact p { margin-bottom: 4px; }
+        strong { font-weight: 600; }
+        a { color: #007AFF; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p class="effective-date">Effective Date: February 16, 2026</p>
+
+    <p>Unsift ("we," "our," or "the app") is a gift card scanning and management app developed by Vakbridge. This Privacy Policy explains how we collect, use, and protect your information when you use our app.</p>
+
+    <h2>1. Information We Collect</h2>
+
+    <p><strong>Account Information</strong></p>
+    <p>When you create an account, we collect:</p>
+    <ul>
+        <li>Email address</li>
+        <li>Display name (if provided)</li>
+        <li>Authentication provider (Email, Google, or Apple)</li>
+    </ul>
+
+    <p><strong>Gift Card Metadata (Cloud-Stored)</strong></p>
+    <p>When you scan a gift card, the following non-sensitive information is stored in our cloud database:</p>
+    <ul>
+        <li>Merchant name (e.g., "Amazon," "Starbucks")</li>
+        <li>Card balance/amount</li>
+        <li>Expiration date</li>
+        <li>Barcode format type</li>
+        <li>Date added</li>
+    </ul>
+
+    <p><strong>Sensitive Card Data (Device-Only)</strong></p>
+    <p>The following sensitive information is stored <strong>exclusively on your device</strong> using your phone's secure hardware (iOS Keychain or Android Keystore) and is <strong>never transmitted to our servers</strong>:</p>
+    <ul>
+        <li>Card numbers</li>
+        <li>PINs</li>
+        <li>Claim codes</li>
+        <li>Access codes</li>
+        <li>Barcode values</li>
+    </ul>
+
+    <p><strong>Anonymous Training Data (Optional)</strong></p>
+    <p>If you opt in to "Help Us Improve," we collect anonymized scan data to improve our card recognition accuracy. This data is <strong>not linked to your account</strong> and includes:</p>
+    <ul>
+        <li>OCR text from scanned images</li>
+        <li>Detected vs. confirmed merchant names</li>
+        <li>Which fields were successfully detected (without the actual values)</li>
+        <li>Scanned card images (anonymized)</li>
+    </ul>
+
+    <p><strong>Crash Reports</strong></p>
+    <p>We use Firebase Crashlytics to collect anonymous crash reports to improve app stability. These reports include device type, OS version, and crash stack traces. They do not include any card data.</p>
+
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+        <li><strong>Provide the service:</strong> Store and display your gift card information across sessions</li>
+        <li><strong>Improve card recognition:</strong> Use anonymous training data (if opted in) to improve OCR accuracy</li>
+        <li><strong>Fix bugs:</strong> Use crash reports to identify and resolve app issues</li>
+        <li><strong>Authenticate you:</strong> Verify your identity to protect your data</li>
+    </ul>
+
+    <h2>3. How We Protect Your Information</h2>
+    <ul>
+        <li><strong>Sensitive card data</strong> (numbers, PINs, codes) is encrypted using your device's hardware-backed secure storage (iOS Keychain / Android Keystore) and never leaves your device</li>
+        <li><strong>Cloud data</strong> is encrypted in transit (TLS) and at rest (Google Cloud infrastructure)</li>
+        <li><strong>Biometric authentication</strong> (Face ID, Touch ID, Fingerprint) protects access to sensitive card details</li>
+        <li><strong>Firestore security rules</strong> ensure each user can only access their own data</li>
+    </ul>
+
+    <h2>4. Third-Party Services</h2>
+    <p>We use the following third-party services:</p>
+    <ul>
+        <li><strong>Firebase Authentication</strong> - User sign-in and account management (<a href="https://firebase.google.com/support/privacy">Firebase Privacy</a>)</li>
+        <li><strong>Cloud Firestore</strong> - Cloud storage for non-sensitive card metadata</li>
+        <li><strong>Firebase Crashlytics</strong> - Anonymous crash reporting</li>
+        <li><strong>Firebase Storage</strong> - Anonymous training image storage (opt-in only)</li>
+        <li><strong>Google ML Kit</strong> - On-device text recognition and barcode scanning (processed locally, no data sent to Google)</li>
+        <li><strong>HF Spaces NER API</strong> - When you scan a card, the raw OCR text (which may include card numbers and PINs) is sent over HTTPS to our named-entity recognition model hosted on Hugging Face Spaces for real-time field extraction. The server processes the text immediately and does not log or store request bodies. This service is operated by Vakbridge.</li>
+        <li><strong>Google Sign-In</strong> - Optional authentication method</li>
+        <li><strong>Apple Sign-In</strong> - Optional authentication method (iOS only)</li>
+    </ul>
+
+    <h2>5. Data Sharing</h2>
+    <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties. Your data is only shared with Firebase/Google Cloud as our infrastructure provider to operate the service.</p>
+
+    <h2>6. Your Rights and Choices</h2>
+    <ul>
+        <li><strong>Opt out of data collection:</strong> You can disable anonymous training data collection at any time in Settings > Privacy & Data</li>
+        <li><strong>Delete your cards:</strong> You can delete individual gift cards from the app at any time. This removes both cloud metadata and on-device sensitive data</li>
+        <li><strong>Delete your account:</strong> You can request full account deletion by contacting us at the email below. We will delete all associated data from our servers</li>
+        <li><strong>Access your data:</strong> You can view all your stored card information within the app at any time</li>
+    </ul>
+
+    <h2>7. Data Retention</h2>
+    <ul>
+        <li><strong>Account data:</strong> Retained as long as your account is active. Deleted upon account deletion request</li>
+        <li><strong>Card metadata:</strong> Retained until you delete the card or your account</li>
+        <li><strong>Sensitive card data:</strong> Stored on your device only. Lost if you uninstall the app or switch devices</li>
+        <li><strong>Anonymous training data:</strong> Retained indefinitely to improve the service. Cannot be linked back to you</li>
+        <li><strong>Crash reports:</strong> Retained for 90 days</li>
+    </ul>
+
+    <h2>8. Children's Privacy</h2>
+    <p>Unsift is not directed at children under the age of 13. We do not knowingly collect personal information from children. If we become aware that a child under 13 has provided personal information, we will delete it.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Effective Date" at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>10. Contact Us</h2>
+    <div class="contact">
+        <p>If you have questions about this Privacy Policy or your data, contact us:</p>
+        <p><strong>Email:</strong> <a href="mailto:info@vakbridge.com">info@vakbridge.com</a></p>
+        <p><strong>Website:</strong> <a href="https://vakbridge.com">vakbridge.com</a></p>
+        <p><strong>Developer:</strong> VakBridge</p>
+    </div>
+</body>
+</html>
