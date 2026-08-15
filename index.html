@@ -30,7 +30,7 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective Date: February 16, 2026</p>
+    <p class="effective-date">Effective Date: August 15, 2026</p>
 
     <p>Unsift ("we," "our," or "the app") is a gift card scanning and management app developed by VakBridge Inc. This Privacy Policy explains how we collect, use, and protect your information when you use our app.</p>
 
@@ -64,6 +64,11 @@
         <li>Barcode values</li>
     </ul>
 
+    <p><strong>Card Photos (Processed for Extraction)</strong></p>
+    <p>When you scan a gift card, the photo is sent over an encrypted connection to Google's Gemini API to identify the fields printed on the card. This happens on every scan and is required for the app to read your card — it is not tied to the optional "Help Us Improve" setting.</p>
+    <p>The photo is sent through our own server, so your device never contacts Google directly and our API credentials are never exposed. We do not store your card photo: it is not written to our database or file storage, and no copy is kept after the scan.</p>
+    <p>Google does not use these images to train its models. Images are temporarily retained on Google's servers for up to 7 days for abuse monitoring, after which they are deleted automatically. You may contact us to request earlier deletion.</p>
+    
     <p><strong>Anonymous Training Data (Optional)</strong></p>
     <p>If you opt in to "Help Us Improve," we collect anonymized scan data to improve our card recognition accuracy. This data is <strong>not linked to your account</strong> and includes:</p>
     <ul>
@@ -71,6 +76,7 @@
         <li>Detected vs. confirmed merchant names</li>
         <li>Which fields were successfully detected (without the actual values)</li>
         <li>Scanned card images (anonymized)</li>
+        <li>Extraction quality records — when we test a new extraction method we record whether the methods agreed on each field and which matched what you saved. These records contain merchant names and agreement results only, never card numbers, PINs, or codes, and are not linked to your account</li>
     </ul>
 
     <p><strong>Crash Reports</strong></p>
@@ -82,6 +88,7 @@
         <li><strong>Improve card recognition:</strong> Use anonymous training data (if opted in) to improve OCR accuracy</li>
         <li><strong>Fix bugs:</strong> Use crash reports to identify and resolve app issues</li>
         <li><strong>Authenticate you:</strong> Verify your identity to protect your data</li>
+        <li><strong>Read your cards:</strong> Send your card photo for automated field extraction so the merchant, card number, and codes can be filled in for you</li>
     </ul>
 
     <h2>3. How We Protect Your Information</h2>
@@ -90,6 +97,7 @@
         <li><strong>Cloud data</strong> is encrypted in transit (TLS) and at rest (Google Cloud infrastructure)</li>
         <li><strong>Biometric authentication</strong> (Face ID, Touch ID, Fingerprint) protects access to sensitive card details</li>
         <li><strong>Firestore security rules</strong> ensure each user can only access their own data</li>
+        <li><strong>Read your cards:</strong> Send your card photo for automated field extraction so the merchant, card number, and codes can be filled in for you</li>
     </ul>
 
     <h2>4. Third-Party Services</h2>
@@ -99,14 +107,15 @@
         <li><strong>Cloud Firestore</strong> - Cloud storage for non-sensitive card metadata</li>
         <li><strong>Firebase Crashlytics</strong> - Anonymous crash reporting</li>
         <li><strong>Firebase Storage</strong> - Anonymous training image storage (opt-in only)</li>
-        <li><strong>Google ML Kit</strong> - On-device text recognition and barcode scanning (processed locally, no data sent to Google)</li>
+        <li><strong>Google ML Kit</strong> - On-device text recognition and barcode scanning only — the image never leaves your phone for this step</li>
         <li><strong>HF Spaces NER API</strong> - When you scan a card, the raw OCR text (which may include card numbers and PINs) is sent over HTTPS to our named-entity recognition model hosted on Hugging Face Spaces for real-time field extraction. The server processes the text immediately and does not log or store request bodies. This service is operated by VakBridge Inc.</li>
         <li><strong>Google Sign-In</strong> - Optional authentication method</li>
         <li><strong>Apple Sign-In</strong> - Optional authentication method (iOS only)</li>
+        <li><strong>Google Gemini API</strong> - Card photos are sent through our server to Google's Gemini API for real-time field extraction on each scan. Images are not used to train Google's models and are retained for a maximum of 7 days before automatic deletion. This call is made server-side by Vakbridge.</li>
     </ul>
 
     <h2>5. Data Sharing</h2>
-    <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties. Your data is only shared with Firebase/Google Cloud as our infrastructure provider to operate the service.</p>
+    <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties. Your data is only shared with Google's Gemini API via card images for processing and Firebase/Google Cloud as our infrastructure provider to operate the service.</p>
 
     <h2>6. Your Rights and Choices</h2>
     <ul>
